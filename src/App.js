@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import math from "mathjs";
 import RandomButton from "./RandomButton";
-import Input from "./Input";
-import AddButton from "./AddButton";
+import List from "./List";
+import InputForm from "./InputForm";
 
 class App extends Component {
   constructor() {
@@ -18,24 +18,15 @@ class App extends Component {
     return (
       <div>
         <h1 id="app-title">Hello, random name picker</h1>
-        <Input handleClick={event => this.handleChange(event)} />
-        <AddButton handleClick={() => this.handleClickAdd()} />
-        {this.state.names.map((name, i) => {
-          if (this.state.luckyWinnerIndex === i) {
-            return (
-              <li key={i} id="winner">
-                {name}
-              </li>
-            );
-          } else {
-            return (
-              <li key={i} id="">
-                {name}
-              </li>
-            );
-          }
-        })}
-
+        {/* <Input handleChange={event => this.handleChange(event)} /> */}
+        <InputForm
+          handleOnChange={event => this.handleChange(event)}
+          handleClickAdd={() => this.handleClickAdd()}
+        />
+        <List
+          names={this.state.names}
+          luckyWinnerIndex={this.state.luckyWinnerIndex}
+        />
         <RandomButton handleClick={() => this.handleClick()} />
       </div>
     );
