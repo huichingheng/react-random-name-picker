@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders List component 1`] = `
+<div>
+  <li
+    id=""
+  >
+    gordon
+  </li>
+  <li
+    id=""
+  >
+    sahil
+  </li>
+  <li
+    id=""
+  >
+    david
+  </li>
+  <li
+    id=""
+  >
+    sally
+  </li>
+  <li
+    id=""
+  >
+    jane
+  </li>
+  <li
+    id=""
+  >
+    alice
+  </li>
+</div>
+`;
