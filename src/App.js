@@ -19,7 +19,7 @@ class App extends Component {
       <div>
         <h1 id="app-title">Hello, random name picker</h1>
         {/* <Input handleChange={event => this.handleChange(event)} /> */}
-        <InputForm
+        <InputForm value={this.state.value}
           handleOnChange={event => this.handleChange(event)}
           handleClickAdd={() => this.handleClickAdd()}
         />
@@ -40,6 +40,7 @@ class App extends Component {
 
   handleClickAdd() {
     this.setState({ names: [...this.state.names, this.state.value] });
+    this.setState({ value: ""})
   }
 
   handleChange(event) {
